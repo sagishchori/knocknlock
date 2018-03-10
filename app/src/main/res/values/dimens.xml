@@ -1,0 +1,7 @@
+<resources>
+
+    <!-- App Dimensions -->
+    <dimen name="app_base_margin">16dp</dimen>
+    <dimen name="app_base_margin_half">8dp</dimen>
+    <dimen name="app_base_margin_quarter">4dp</dimen>
+</resources>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">KnocknLock</string>
+    <string name="action_scan">Scan</string>
+
+    <!-- Connection states -->
+    <string name="connected_to">Connected to</string>
+    <string name="disconnected">Disconnected</string>
+
+    <!-- BLE List item strings -->
+    <string name="device_name">Device name</string>
+    <string name="device_mac_address">Device MAC address</string>
+    <string name="device_rssi">Device RSSI</string>
+</resources>
