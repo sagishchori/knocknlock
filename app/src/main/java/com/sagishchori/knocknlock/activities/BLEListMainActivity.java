@@ -1,4 +1,4 @@
-package com.knocknlock.sagishchori.knocknlock.activities;
+package com.sagishchori.knocknlock.activities;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
@@ -23,7 +23,7 @@ import android.view.MenuItem;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.knocknlock.sagishchori.knocknlock.adapters.BLEListItemAdapter;
+import com.sagishchori.knocknlock.adapters.BLEListItemAdapter;
 import com.knocknlock.sagishchori.knocknlock.R;
 
 public class BLEListMainActivity extends AppCompatActivity implements BLEListItemAdapter.OnBLEDeviceClickListener

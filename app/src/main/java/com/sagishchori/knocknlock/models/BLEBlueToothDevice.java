@@ -1,4 +1,4 @@
-package com.knocknlock.sagishchori.knocknlock.models;
+package com.sagishchori.knocknlock.models;
 
 import android.bluetooth.BluetoothDevice;
 

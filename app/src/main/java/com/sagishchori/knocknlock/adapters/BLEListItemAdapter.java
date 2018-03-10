@@ -1,4 +1,4 @@
-package com.knocknlock.sagishchori.knocknlock.adapters;
+package com.sagishchori.knocknlock.adapters;
 
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.knocknlock.sagishchori.knocknlock.R;
-import com.knocknlock.sagishchori.knocknlock.models.BLEBlueToothDevice;
+import com.sagishchori.knocknlock.models.BLEBlueToothDevice;
 
 import java.util.ArrayList;
 import java.util.Collections;
