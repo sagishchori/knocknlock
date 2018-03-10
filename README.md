@@ -7,6 +7,6 @@ This app allows you to:
 2. Show the devices in list (RecyclerView).
 3. Sort the list by RSSI key.
 4. Connecting to/ Disconnecting from any selected device.
-* By clicking on RecyclerView item the user is trying to connect to/disconnect from GATT server
+* By clicking on RecyclerView item the user is trying to connect to/disconnect from GATT server.
 5. After connecting to a device discover device's services.
 * Nothing is being done with the list.
