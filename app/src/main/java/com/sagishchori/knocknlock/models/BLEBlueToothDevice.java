@@ -55,4 +55,9 @@ public class BLEBlueToothDevice
     {
         this.connected = connected;
     }
+
+    public String toString()
+    {
+        return bluetoothDevice.getName() + " " + bluetoothDevice.getAddress();
+    }
 }

@@ -14,7 +14,6 @@ import com.sagishchori.knocknlock.models.BLEBlueToothDevice;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.PriorityQueue;
 
 /**
  * Created by Sagi Shchori on 08/03/2018.
