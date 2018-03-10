@@ -1,4 +1,4 @@
-package com.knocknlock.sagishchori.knocknlock.Activities;
+package com.knocknlock.sagishchori.knocknlock.activities;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
@@ -23,7 +23,7 @@ import android.view.MenuItem;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.knocknlock.sagishchori.knocknlock.Adapters.BLEListItemAdapter;
+import com.knocknlock.sagishchori.knocknlock.adapters.BLEListItemAdapter;
 import com.knocknlock.sagishchori.knocknlock.R;
 
 public class BLEListMainActivity extends AppCompatActivity implements BLEListItemAdapter.OnBLEDeviceClickListener
@@ -128,6 +128,12 @@ public class BLEListMainActivity extends AppCompatActivity implements BLEListIte
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * A method to check if Bluetooth available on the device and if it is enabled.
+     *
+     * @return      true - if Bluetooth is available and enabled, false - if Bluetooth is not available
+     *              or Bluetooth is not enabled
+     */
     private boolean isBlueToothAvailableAndEnabled()
     {
         if (mBluetoothAdapter == null || !mBluetoothAdapter.isEnabled()) {
@@ -156,6 +162,9 @@ public class BLEListMainActivity extends AppCompatActivity implements BLEListIte
         }
     }
 
+    /**
+     * A method for enabling the device's Bluetooth in case it is disabled.
+     */
     private void enableBlueTooth()
     {
         Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
@@ -163,17 +172,22 @@ public class BLEListMainActivity extends AppCompatActivity implements BLEListIte
     }
 
     /**
+     * A method to start scanning for BLE devices or to stop scanning when needed.
      *
-     * @param enable
+     * @param enable    A boolean for start/stop the scan
      */
     private void startScan(final boolean enable)
     {
+        // First, check if Bluetooth is enabled.
         if (!mEnabled)
         {
+            // In case the Bluetooth is not enabled, enable it and return. The next call
+            // to startScan() will be after the system will be notified that Bluetooth was enabled.
             enableBlueTooth();
             return;
         }
 
+        // If Bluetooth is enabled start the scan for a period of time defined in SCAN_PERIOD field.
         if (enable) {
             new Handler().postDelayed(new Runnable() {
                 @Override
@@ -206,6 +220,9 @@ public class BLEListMainActivity extends AppCompatActivity implements BLEListIte
         }
     }
 
+    /**
+     * @see android.bluetooth.BluetoothAdapter.LeScanCallback
+     */
     private BluetoothAdapter.LeScanCallback mLeScanCallback = new BluetoothAdapter.LeScanCallback() {
                 @Override
                 public void onLeScan(final BluetoothDevice device, final int rssi, byte[] scanRecord) {
@@ -214,12 +231,14 @@ public class BLEListMainActivity extends AppCompatActivity implements BLEListIte
                         public void run() {
                             Log.i("Device found:", device.getName() + " " + device.getAddress());
                             mLeDeviceListAdapter.addDevice(device, rssi);
-                            mLeDeviceListAdapter.notifyDataSetChanged();
                         }
                     });
                 }
             };
 
+    /**
+     * @see BluetoothGattCallback
+     */
     private BluetoothGattCallback bluetoothGattCallback = new BluetoothGattCallback()
     {
         @Override

@@ -1,4 +1,4 @@
-package com.knocknlock.sagishchori.knocknlock.Adapters;
+package com.knocknlock.sagishchori.knocknlock.adapters;
 
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
@@ -9,11 +9,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.knocknlock.sagishchori.knocknlock.R;
-import com.knocknlock.sagishchori.knocknlock.Models.BLEBlueToothDevice;
+import com.knocknlock.sagishchori.knocknlock.models.BLEBlueToothDevice;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.PriorityQueue;
 
 /**
  * Created by Sagi Shchori on 08/03/2018.
@@ -87,6 +88,8 @@ public class BLEListItemAdapter extends RecyclerView.Adapter<BLEListItemAdapter.
             // Sorting the {@link BluetoothDevice} list in descending order
             Collections.sort(deviceList, new RSSIComparator());
         }
+
+        notifyDataSetChanged();
     }
 
     public void updateListItemState(boolean state, int selectedItemPosition)

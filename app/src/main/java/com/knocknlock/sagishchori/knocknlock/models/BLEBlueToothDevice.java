@@ -1,4 +1,4 @@
-package com.knocknlock.sagishchori.knocknlock.Models;
+package com.knocknlock.sagishchori.knocknlock.models;
 
 import android.bluetooth.BluetoothDevice;
 
@@ -16,6 +16,14 @@ public class BLEBlueToothDevice
     {
         this.bluetoothDevice = bluetoothDevice;
         this.rssi = rssi;
+    }
+
+    public BLEBlueToothDevice copy (BLEBlueToothDevice bleBlueToothDevice)
+    {
+        BLEBlueToothDevice device = new BLEBlueToothDevice(bleBlueToothDevice.getBluetoothDevice(), bleBlueToothDevice.getRSSI());
+        device.setConnected(bleBlueToothDevice.isConnected());
+
+        return device;
     }
 
     public BluetoothDevice getBluetoothDevice()
